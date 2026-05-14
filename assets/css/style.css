@@ -1,0 +1,144 @@
+/**
+ * NicaFood ERP - Estilos Personalizados
+ * Compatible con Bootstrap 5
+ */
+
+:root {
+    --nf-primary: #0b3185;
+    --nf-secondary: #be1010;
+    --nf-accent: #ff9e00;
+    --nf-light: #ffffff;
+    --nf-dark: #212529;
+}
+
+/* Navbar personalizado */
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-dark.bg-primary {
+    background: linear-gradient(135deg, var(--nf-primary), #082466) !important;
+}
+
+/* Tarjetas con sombra suave */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background-color: var(--nf-primary);
+    border-color: var(--nf-primary);
+}
+
+.btn-primary:hover {
+    background-color: #082466;
+    border-color: #082466;
+}
+
+.btn-warning {
+    background-color: var(--nf-accent);
+    border-color: var(--nf-accent);
+    color: #212529;
+}
+
+/* Tablas mejoradas */
+.table th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(11, 49, 133, 0.03);
+}
+
+/* Formularios */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--nf-accent);
+    box-shadow: 0 0 0 0.25rem rgba(255, 158, 0, 0.25);
+}
+
+/* Badges de estado */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+/* Animaciones de carga */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        padding-top: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Utilidades personalizadas */
+.text-primary-nf { color: var(--nf-primary) !important; }
+.text-secondary-nf { color: var(--nf-secondary) !important; }
+.text-accent-nf { color: var(--nf-accent) !important; }
+
+.bg-primary-nf { background-color: var(--nf-primary) !important; }
+.bg-secondary-nf { background-color: var(--nf-secondary) !important; }
+
+/* Toast container */
+#toast-container {
+    pointer-events: none;
+}
+
+#toast-container .toast {
+    pointer-events: auto;
+    min-width: 300px;
+}
+
+/* Loader */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(11, 49, 133, 0.2);
+    border-top-color: var(--nf-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Print styles para facturas */
+@media print {
+    .no-print { display: none !important; }
+    .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+    body { background: white !important; }
+}
